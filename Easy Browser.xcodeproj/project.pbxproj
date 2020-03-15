@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,13 +56,13 @@
 		48658F4E241ED97500CA7CBC /* Easy Browser */ = {
 			isa = PBXGroup;
 			children = (
+				48658F5D241ED97800CA7CBC /* Info.plist */,
 				48658F4F241ED97500CA7CBC /* AppDelegate.swift */,
 				48658F51241ED97500CA7CBC /* SceneDelegate.swift */,
 				48658F53241ED97500CA7CBC /* ViewController.swift */,
-				48658F55241ED97500CA7CBC /* Main.storyboard */,
 				48658F58241ED97800CA7CBC /* Assets.xcassets */,
 				48658F5A241ED97800CA7CBC /* LaunchScreen.storyboard */,
-				48658F5D241ED97800CA7CBC /* Info.plist */,
+				48658F55241ED97500CA7CBC /* Main.storyboard */,
 			);
 			path = "Easy Browser";
 			sourceTree = "<group>";
@@ -103,7 +103,7 @@
 				};
 			};
 			buildConfigurationList = 48658F47241ED97500CA7CBC /* Build configuration list for PBXProject "Easy Browser" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
