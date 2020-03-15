@@ -10,19 +10,22 @@ import UIKit
 import WebKit
 
 class ViewController: UIViewController, WKNavigationDelegate {
-    private var webView: WKWebView!
+    private lazy var webView: WKWebView = {
+        let webView = WKWebView()
+        webView.navigationDelegate = self
+        webView.allowsBackForwardNavigationGestures = true
+       
+        let url = URL(string: "https://www.hackingwithswift.com")!
+        webView.load(URLRequest(url: url))
+        
+        return webView
+    }()
     
     override func loadView() {
-        webView = WKWebView()
-        webView.navigationDelegate = self
         view = webView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let url = URL(string: "https://www.hackingwithswift.com")!
-        webView.load(URLRequest(url: url))
-        webView.allowsBackForwardNavigationGestures = true
     }
 }
