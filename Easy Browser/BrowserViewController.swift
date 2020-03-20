@@ -9,13 +9,13 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKNavigationDelegate {
+class BrowserViewController: UIViewController, WKNavigationDelegate {
     private lazy var webView: WKWebView = {
         let webView = WKWebView()
         webView.navigationDelegate = self
         webView.allowsBackForwardNavigationGestures = true
        
-        let url = URL(string: "https://\(websites[0])")!
+        let url = URL(string: "https://\(website)")!
         webView.load(URLRequest(url: url))
         
         return webView
@@ -27,7 +27,16 @@ class ViewController: UIViewController, WKNavigationDelegate {
         return progress
     }()
     
-    private let websites = ["apple.com", "hackingwithswift.com"]
+    private let website: String
+    
+    init(website: String) {
+        self.website = website
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = webView
@@ -36,7 +45,6 @@ class ViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
         configureToolbar()
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
@@ -58,16 +66,6 @@ class ViewController: UIViewController, WKNavigationDelegate {
         navigationController?.isToolbarHidden = false
     }
     
-    @objc private func openTapped() {
-        let ac = UIAlertController(title: "Open page…", message: nil, preferredStyle: .actionSheet)
-        for website in websites {
-            ac.addAction(UIAlertAction(title: website, style: .default, handler: openPage))
-        }
-        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        ac.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
-        present(ac, animated: true)
-    }
-    
     private func openPage(action: UIAlertAction) {
         let url = URL(string: "https://\(action.title!)")!
         webView.load(URLRequest(url: url))
@@ -81,11 +79,9 @@ class ViewController: UIViewController, WKNavigationDelegate {
         let url = navigationAction.request.url
         
         if let host = url?.host {
-            for website in websites {
-                if host.contains(website) {
-                    decisionHandler(.allow)
-                    return
-                }
+            if host.contains(website) {
+                decisionHandler(.allow)
+                return
             }
         }
         

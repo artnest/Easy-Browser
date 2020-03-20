@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		48658F50241ED97500CA7CBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48658F4F241ED97500CA7CBC /* AppDelegate.swift */; };
 		48658F52241ED97500CA7CBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48658F51241ED97500CA7CBC /* SceneDelegate.swift */; };
-		48658F54241ED97500CA7CBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48658F53241ED97500CA7CBC /* ViewController.swift */; };
+		48658F54241ED97500CA7CBC /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48658F53241ED97500CA7CBC /* BrowserViewController.swift */; };
 		48658F57241ED97500CA7CBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48658F55241ED97500CA7CBC /* Main.storyboard */; };
 		48658F59241ED97800CA7CBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48658F58241ED97800CA7CBC /* Assets.xcassets */; };
 		48658F5C241ED97800CA7CBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48658F5A241ED97800CA7CBC /* LaunchScreen.storyboard */; };
+		489018952424CD0F0052EACB /* WebsitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489018942424CD0F0052EACB /* WebsitesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		48658F4C241ED97500CA7CBC /* Easy Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48658F4F241ED97500CA7CBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48658F51241ED97500CA7CBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		48658F53241ED97500CA7CBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48658F53241ED97500CA7CBC /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		48658F56241ED97500CA7CBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48658F58241ED97800CA7CBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48658F5B241ED97800CA7CBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48658F5D241ED97800CA7CBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		489018942424CD0F0052EACB /* WebsitesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsitesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +61,8 @@
 				48658F5D241ED97800CA7CBC /* Info.plist */,
 				48658F4F241ED97500CA7CBC /* AppDelegate.swift */,
 				48658F51241ED97500CA7CBC /* SceneDelegate.swift */,
-				48658F53241ED97500CA7CBC /* ViewController.swift */,
+				48658F53241ED97500CA7CBC /* BrowserViewController.swift */,
+				489018942424CD0F0052EACB /* WebsitesViewController.swift */,
 				48658F58241ED97800CA7CBC /* Assets.xcassets */,
 				48658F5A241ED97800CA7CBC /* LaunchScreen.storyboard */,
 				48658F55241ED97500CA7CBC /* Main.storyboard */,
@@ -138,7 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48658F54241ED97500CA7CBC /* ViewController.swift in Sources */,
+				489018952424CD0F0052EACB /* WebsitesViewController.swift in Sources */,
+				48658F54241ED97500CA7CBC /* BrowserViewController.swift in Sources */,
 				48658F50241ED97500CA7CBC /* AppDelegate.swift in Sources */,
 				48658F52241ED97500CA7CBC /* SceneDelegate.swift in Sources */,
 			);
