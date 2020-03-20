@@ -21,7 +21,11 @@ class ViewController: UIViewController, WKNavigationDelegate {
         return webView
     }()
     
-    private var progressView: UIProgressView!
+    private let progressView: UIProgressView = {
+        let progress = UIProgressView(progressViewStyle: .default)
+        progress.sizeToFit()
+        return progress
+    }()
     
     private let websites = ["apple.com", "hackingwithswift.com"]
     
@@ -33,14 +37,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
-        
-        progressView = UIProgressView(progressViewStyle: .default)
-        progressView.sizeToFit()
-        let progressButton = UIBarButtonItem(customView: progressView)
-        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: nil, action: #selector(webView.reload))
-        toolbarItems = [progressButton, spacer, refresh]
-        navigationController?.isToolbarHidden = false
+        configureToolbar()
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
     }
@@ -49,6 +46,16 @@ class ViewController: UIViewController, WKNavigationDelegate {
         if keyPath == "estimatedProgress" {
             progressView.progress = Float(webView.estimatedProgress)
         }
+    }
+    
+    private func configureToolbar() {
+        let back = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: #selector(webView.goBack))
+        let forward = UIBarButtonItem(title: "Forward", style: .plain, target: nil, action: #selector(webView.goForward))
+        let progress = UIBarButtonItem(customView: progressView)
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: nil, action: #selector(webView.reload))
+        toolbarItems = [back, forward, progress, spacer, refresh]
+        navigationController?.isToolbarHidden = false
     }
     
     @objc private func openTapped() {
